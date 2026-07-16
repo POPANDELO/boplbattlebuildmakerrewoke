@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bopl Battle Combo Constructor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>⚔️ Bopl Battle Конструктор</h1>
+    
+    <div class="input-row">
+        <div class="input-group">
+            <label for="nickname">Игровой Ник:</label>
+            <input type="text" id="nickname" value="Player_1">
+        </div>
+        <div class="input-group">
+            <label for="cellName">Имя ячейки (Слот):</label>
+            <input type="text" id="cellName" value="Combo_1">
+        </div>
+    </div>
+
+    <label class="center-label">Выбери ровно 3 способности:</label>
+    <div class="counter-info">
+        Выбрано: <span id="selectCount">0</span> из <span>3</span>
+    </div>
+    
+    <div class="abilities-menu" id="abilitiesMenu"></div>
+
+    <button id="saveBtn" onclick="saveCombo()" disabled>
+        Сохранить ячейку и создать код
+    </button>
+
+    <div id="comboResult" class="combo-box" style="display:none;">
+        <h3>💾 Активная ячейка: <span id="resCell"></span></h3>
+        <p>Игрок: <strong id="resNick"></strong></p>
+        <div class="result-icons" id="resultIcons"></div>
+    </div>
+
+    <div class="sync-area">
+        <h3>🔄 Синхронизация между людьми</h3>
+        <textarea id="syncCode" placeholder="Код для обмена..."></textarea>
+        <button id="importBtn" onclick="importCombo()">
+            Импортировать код друга
+        </button>
+    </div>
+
+    <!-- НОВЫЙ БЛОК ДЛЯ СПИСКА СВЯЗОК -->
+    <div class="sync-area" style="margin-top: 30px;">
+        <h3>🗄️ Сохраненные связки</h3>
+        <div id="savedCombosList"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
